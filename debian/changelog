@@ -1,0 +1,112 @@
+libloki (0.1.7-3) unstable; urgency=low
+
+  * New maintainer. (Closes: #620021)
+  * Sponsored by Al Nikolov <clown@debian.org>.
+  * Update Standards-Version (no changes)
+  * debian/control: add ${misc:Depends}
+  * debian/control: fix synopsis
+
+ -- Petr Baranov <petr@baranov.fi>  Mon, 27 Jun 2011 11:27:45 +0300
+
+
+libloki (0.1.7-2) unstable; urgency=low
+
+  * fix yasli/random.h - error in bug number :) (Closes: #503829)
+    (only wrong number - fixed in 0.1.7-1)
+  * add watch file
+  * Update Standards-Version (no changes)
+
+ -- Ivan Borzenkov <ivan1986@list.ru>  Sun, 30 Aug 2009 18:05:45 +0400
+
+libloki (0.1.7-1) unstable; urgency=low
+
+  * New upstream release
+  * New mantainer. (Closes: #508085)
+  * No needed rename (Closes: #430268)
+  * fix yasli/random.h (Closes: #512044)
+  * Update Standards-Version (no changes)
+
+ -- Ivan Borzenkov <ivan1986@list.ru>  Fri, 08 May 2009 23:07:37 +0400
+
+libloki (0.1.5-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix FTBFS with gcc-4.3 (closes: #413432)
+  * Update Standards-Version (no changes)
+  * Make lintian happy:
+    - Change from Source-Version to binary:Version in debian/control
+    - Don't ignore errors on clean
+    - Add copyright symbol to debian/copyright
+    - Move Homepage: from description to control field
+    - Register doc-base files with right section
+
+ -- Stephen Gran <sgran@debian.org>  Sat, 05 Apr 2008 14:57:24 +0100
+
+libloki (0.1.5-3) unstable; urgency=low
+
+  * debian/rules: Always build with OS=Linux to fix FTBFS on kFreeBSD, Hurd
+    thanks to Petr Salinger (Closes: #392350)
+  * debian/control: Remove libloki-dev Depends on libc-dev, c++abi2-dev
+    they are already drawn in by build-essential
+  * debian/control: Priority should be optional, not extra
+  * debian/rules: Remove useless comments
+  * debian/rules: Set CXXFLAGS, not CFLAGS
+  * debian/copyright: Add myself as having "cleaned up" the package
+
+ -- Lukas Fittl <lfittl@fsfe.org>  Mon,  6 Nov 2006 20:06:35 +0100
+
+libloki (0.1.5-2) unstable; urgency=low
+
+  * Add debian/libloki-doc.doc-base (Closes: #390976)
+
+ -- Lukas Fittl <lfittl@fsfe.org>  Wed,  4 Oct 2006 08:31:41 +0200
+
+libloki (0.1.5-1) unstable; urgency=low
+
+  * New upstream release (Closes: #386825)
+  * debian/control: Adopt the package
+  * debian/control: Update to Standards-Version 3.7.2, no changes needed
+  * debian/compat, debian/control: Use debhelper compat level 5,
+    no changes needed
+  * debian/README.Debian: Update book website address (Closes: #336889)
+  * debian/copyright: Update copyright summary
+  * debian/rules: Cleanup
+  * debian/README.Debian: Replace 'Debian GNU/Linux',
+    there is also kfreebsd and hurd
+  * debian/README.Debian, rename to libloki-dev.README.Debian, as
+    only developer information is in there
+  * Drop debian/patches
+    - debian/patches/50-pkgconfig.dpatch: pkg-config is not needed for
+      this package
+    - debian/patches/20-Makefile.dpatch: Merged upstream and later removed,
+      because the original Makefile has been fixed
+    - debian/rules: Remove dpatch parts
+    - debian/control: Remove Build-Depends on dpatch
+  * src/Makefile: Avoid FTBFS by overriding CPPFLAGS and LDFLAGS
+    (taken from upstream cvs)
+  * src/Makefile: Link after calling install, otherwise we end up with
+    2 copies of the lib and no links (taken from upstream cvs)
+  * Build shared library packages
+    - debian/control: Add libloki{-dbg,0.1.5} packages
+    - debian/README.Debian: Remove obsolete 'About the package' section
+    - Add debian/libloki-dev.install
+    - Add debian/libloki0.1.5.install
+  * Install doxygen documentation
+    - debian/control: Add libloki-doc package
+    - Add debian/libloki-doc.install
+
+ -- Lukas Fittl <lfittl@fsfe.org>  Mon, 11 Sep 2006 23:36:20 +0200
+
+libloki (0.0.20030413-2) unstable; urgency=low
+
+  * Removed suggestion on libtut-doc. Oops.
+  * Added more notes to README.Debian.
+
+ -- martin f. krafft <madduck@debian.org>  Sat, 14 May 2005 20:02:11 +0200
+
+libloki (0.0.20030413-1) unstable; urgency=low
+
+  * Initial release (closes: Bug#251229).
+
+ -- martin f. krafft <madduck@debian.org>  Wed, 11 May 2005 21:44:44 +0200
+
